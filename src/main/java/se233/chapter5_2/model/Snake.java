@@ -2,6 +2,7 @@ package se233.chapter5_2.model;
 
 import javafx.geometry.Point2D;
 import se233.chapter5_2.view.GameStage;
+import se233.chapter5_2.view.Score;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +12,7 @@ public class Snake {
     private Point2D head;
     private Point2D prev_tail;
     private List<Point2D> body;
+    private int score = 0;
 
     public Snake(Point2D position){
         direction = Direction.DOWN;
@@ -32,10 +34,34 @@ public class Snake {
     public void setDirection(Direction direction){this.direction = direction;}
     public Direction getDirection(){return direction;}
     public Point2D getHead(){return head;}
-    public boolean collided(Food food) {return head.equals(food.getPosition());}
+
+    public boolean collided(Food food) {
+        if (head.equals(food.getPosition())){
+            setScore(score+1);
+            return true;
+        }
+        return false;
+    }
     public void grow(){
         body.add(prev_tail);
     }
     public int getLength(){return body.size() ;}
     public List<Point2D> getBody() {return body;}
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public boolean collided(SpecialFood food){
+        if (food != null && head.equals(food.getPosition())){
+            setScore(score+2);
+            return true;
+        }
+        return false;
+    }
+
 }

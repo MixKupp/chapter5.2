@@ -7,6 +7,7 @@ import javafx.stage.Stage;
 import se233.chapter5_2.controller.GameLoop;
 import se233.chapter5_2.model.Food;
 import se233.chapter5_2.model.Snake;
+import se233.chapter5_2.model.SpecialFood;
 import se233.chapter5_2.view.GameStage;
 
 public class Launcher extends Application {
@@ -19,8 +20,9 @@ public class Launcher extends Application {
         GameStage gameStage = new GameStage();
         Snake snake = new Snake(new Point2D(gameStage.WIDTH / 2, gameStage.HEIGHT / 2));
         Food food = new Food();
+        SpecialFood specialFood = new SpecialFood();
 
-        GameLoop gameLoop = new GameLoop(gameStage, snake, food);
+        GameLoop gameLoop = new GameLoop(gameStage, snake, food , specialFood);
 
         Scene scene = new Scene(
                 gameStage,

@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import se233.chapter5_2.model.Direction;
 import se233.chapter5_2.model.Food;
 import se233.chapter5_2.model.Snake;
+import se233.chapter5_2.model.SpecialFood;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -67,5 +68,17 @@ public class SnakeTest {
         snake.move();
         snake.grow();
         assertTrue(snake.checkDead());
+    }
+    @Test
+    public void checkScore_SnakeCollidedFood_scoreIncrease(){
+        Food food  = new Food(new Point2D(0,0));
+        snake.collided(food);
+        assertEquals(1, snake.getScore());
+    }
+    @Test
+    public void checkScore_SnakeCollidedSpecialFood_scoreIncreaseBy2(){
+        SpecialFood specialFood = new SpecialFood(new Point2D(0,0));
+        snake.collided(specialFood);
+        assertEquals(2, snake.getScore());
     }
 }

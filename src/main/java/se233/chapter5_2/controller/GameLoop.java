@@ -1,15 +1,19 @@
 package se233.chapter5_2.controller;
 
+import javafx.application.Platform;
 import javafx.scene.input.KeyCode;
 import se233.chapter5_2.model.Direction;
 import se233.chapter5_2.model.Food;
 import se233.chapter5_2.model.Snake;
+import se233.chapter5_2.model.SpecialFood;
 import se233.chapter5_2.view.GameStage;
+import se233.chapter5_2.view.Score;
 
 public class GameLoop implements Runnable {
     private GameStage gameStage;
     private Snake snake;
     private Food food;
+    private SpecialFood specialFood;
     private float interval = 1000.0f / 10;
     private boolean running;
 
@@ -20,7 +24,14 @@ public class GameLoop implements Runnable {
         running = true;
     }
 
-    private void keyProcess() {
+    public GameLoop(GameStage gameStage, Snake snake, Food food,SpecialFood specialFood) {
+        this.snake = snake;
+        this.gameStage = gameStage;
+        this.food = food;
+        this.specialFood = specialFood;
+        running = true;
+    }
+    public void keyProcess() {
         KeyCode curKey = gameStage.getKey();
         Direction curDirection = snake.getDirection();
 
@@ -36,18 +47,31 @@ public class GameLoop implements Runnable {
         snake.move();
     }
 
-    private void checkCollision() {
+    public void checkCollision() {
         if (snake.collided(food)) {
             snake.grow();
             food.respawn();
         }
+        if (snake.collided(specialFood)) {
+            snake.grow();
+            specialFood.respawn();
+        }
         if (snake.checkDead()) {
             running = false;
+            gameStage.deadPopUp();
         }
     }
 
-    private void redraw() {
-        gameStage.render(snake, food);
+    public void redraw() {
+        gameStage.renderFood(snake, food);
+        if (specialFood != null){
+            gameStage.renderSpecialFood(specialFood);
+        }
+    }
+    public void updateScore(Score score, Snake snake){
+        Platform.runLater(()->{
+            score.setScore(snake.getScore());
+        });
     }
 
     @Override
@@ -56,6 +80,7 @@ public class GameLoop implements Runnable {
             keyProcess();
             checkCollision();
             redraw();
+            updateScore(gameStage.getScore(), snake);
             try {
                 Thread.sleep((long) interval);
             } catch (InterruptedException e) {

@@ -1,13 +1,13 @@
-package se233.chapter5_2.controller;
+package se233.chapter6.controller;
 
 import javafx.application.Platform;
 import javafx.scene.input.KeyCode;
-import se233.chapter5_2.model.Direction;
-import se233.chapter5_2.model.Food;
-import se233.chapter5_2.model.Snake;
-import se233.chapter5_2.model.SpecialFood;
-import se233.chapter5_2.view.GameStage;
-import se233.chapter5_2.view.Score;
+import se233.chapter6.model.Direction;
+import se233.chapter6.model.Food;
+import se233.chapter6.model.Snake;
+import se233.chapter6.model.SpecialFood;
+import se233.chapter6.view.GameStage;
+import se233.chapter6.view.Score;
 
 public class GameLoop implements Runnable {
     private GameStage gameStage;

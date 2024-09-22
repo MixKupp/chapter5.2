@@ -1,8 +1,7 @@
-package se233.chapter5_2.model;
+package se233.chapter6.model;
 
 import javafx.geometry.Point2D;
-import se233.chapter5_2.view.GameStage;
-import se233.chapter5_2.view.Score;
+import se233.chapter6.view.GameStage;
 
 import java.util.ArrayList;
 import java.util.List;

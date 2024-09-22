@@ -1,15 +1,15 @@
-package se233.chapter5_2;
+package se233.chapter6;
 
 import javafx.geometry.Point2D;
 import javafx.scene.input.KeyCode;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import se233.chapter5_2.controller.GameLoop;
-import se233.chapter5_2.model.Direction;
-import se233.chapter5_2.model.Food;
-import se233.chapter5_2.model.Snake;
-import se233.chapter5_2.view.GameStage;
+import se233.chapter6.controller.GameLoop;
+import se233.chapter6.model.Direction;
+import se233.chapter6.model.Food;
+import se233.chapter6.model.Snake;
+import se233.chapter6.view.GameStage;
 
 
 import static org.junit.jupiter.api.Assertions.*;

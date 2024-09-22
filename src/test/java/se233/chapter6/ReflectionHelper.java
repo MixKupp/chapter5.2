@@ -1,4 +1,4 @@
-package se233.chapter5_2;
+package se233.chapter6;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;

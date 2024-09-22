@@ -1,14 +1,14 @@
-package se233.chapter5_2;
+package se233.chapter6;
 
 import javafx.application.Application;
 import javafx.geometry.Point2D;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import se233.chapter5_2.controller.GameLoop;
-import se233.chapter5_2.model.Food;
-import se233.chapter5_2.model.Snake;
-import se233.chapter5_2.model.SpecialFood;
-import se233.chapter5_2.view.GameStage;
+import se233.chapter6.controller.GameLoop;
+import se233.chapter6.model.Food;
+import se233.chapter6.model.Snake;
+import se233.chapter6.model.SpecialFood;
+import se233.chapter6.view.GameStage;
 
 public class Launcher extends Application {
     public static void main(String[] args) {

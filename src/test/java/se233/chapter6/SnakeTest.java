@@ -1,13 +1,12 @@
-package se233.chapter5_2;
+package se233.chapter6;
 
 import javafx.geometry.Point2D;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import se233.chapter5_2.model.Direction;
-import se233.chapter5_2.model.Food;
-import se233.chapter5_2.model.Snake;
-import se233.chapter5_2.model.SpecialFood;
+import se233.chapter6.model.Direction;
+import se233.chapter6.model.Food;
+import se233.chapter6.model.Snake;
+import se233.chapter6.model.SpecialFood;
 
 import static org.junit.jupiter.api.Assertions.*;
 

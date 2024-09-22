@@ -1,7 +1,8 @@
-module se233.chapter5_2 {
+module se233.chapter6 {
     requires javafx.controls;
     requires javafx.fxml;
+    requires org.apache.logging.log4j;
 
-    opens se233.chapter5_2 to javafx.fxml;
-    exports se233.chapter5_2;
+    opens se233.chapter6 to javafx.fxml;
+    exports se233.chapter6;
 }

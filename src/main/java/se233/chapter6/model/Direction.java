@@ -1,4 +1,4 @@
-package se233.chapter5_2.model;
+package se233.chapter6.model;
 
 
 import javafx.geometry.Point2D;

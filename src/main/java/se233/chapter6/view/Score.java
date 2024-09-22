@@ -1,4 +1,4 @@
-package se233.chapter5_2.view;
+package se233.chapter6.view;
 
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
